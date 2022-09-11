@@ -28,4 +28,15 @@ public class StringTest {
         assertThat(splitArray).containsExactly("1", "2");
         assertThat(splitArray1).containsExactly("1");
     }
+
+    @Test
+    @DisplayName("String subString 테스트")
+    void subString() {
+        String example = "(1,2)";
+        int beginIndex = example.indexOf("(");
+        int lastIndex = example.lastIndexOf(")");
+        String result = example.substring(beginIndex +1, lastIndex);
+
+        assertThat(result).isEqualTo("1,2");
+    }
 }
