@@ -14,4 +14,8 @@ class ValidationUtils {
         }
         throw new IllegalStateException("Utility class");
     }
+
+    public static boolean checkNotDuplicate(int first, int second, int third) {
+        return !(first==second || second==third || third==first);
+    }
 }
