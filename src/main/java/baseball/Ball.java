@@ -40,6 +40,6 @@ public class Ball {
     }
 
     private boolean matchBallNo(BallNumber number) {
-        return this.number == number;
+        return this.number.no == number.no;
     }
 }

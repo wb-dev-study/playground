@@ -53,7 +53,7 @@ public class PlayBaseBallGame {
         }
     }
 
-    private PlayResult matchAnswer(List<Ball> answerBalls, List<Ball> usesrBalls) {
+    public PlayResult matchAnswer(List<Ball> answerBalls, List<Ball> usesrBalls) {
         PlayResult playResult = new PlayResult();
         for (Ball answer : answerBalls) {
             playResult.report(compareAnswer(usesrBalls, answer));
