@@ -6,16 +6,26 @@ public class Ball {
     private final int position;
     private final int ballNo;
 
+    public static final int MIN_NUMBER = 1;
+    public static final int MAX_NUMBER = 9;
+
     public Ball(int position, int ballNo) {
+        validNumber(ballNo);
         this.position = position;
         this.ballNo = ballNo;
+    }
+
+    private void validNumber(int ballNo) {
+        if (ballNo < MIN_NUMBER || ballNo > MAX_NUMBER) {
+            throw new IllegalArgumentException("ballNo must be a number between 1 and 9");
+        }
     }
 
     public baseball.BallStatus play(Ball ball) {
         if (this.equals(ball)) {
             return BallStatus.STRIKE;
         }
-        if (ball.matchBallNo(ballNo)) { // 필드에 직접 접근 -> 객체에 메세지를 보내는 방식
+        if (ball.matchBallNo(ballNo)) {
             return BallStatus.BALL;
         }
         return BallStatus.NOTHING;
