@@ -1,4 +1,4 @@
-package baseball.domain;
+package zoey.baseball.domain;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

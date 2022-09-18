@@ -1,8 +1,8 @@
-package baseball;
+package zoey.baseball;
 
-import baseball.domain.BallGame;
-import baseball.domain.BallGameResult;
-import baseball.domain.NumberGenerator;
+import zoey.baseball.domain.BallGame;
+import zoey.baseball.domain.BallGameResult;
+import zoey.baseball.domain.NumberGenerator;
 
 import java.util.Arrays;
 import java.util.List;

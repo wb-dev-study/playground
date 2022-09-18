@@ -1,4 +1,4 @@
-package baseball.domain;
+package zoey.baseball.domain;
 
 public class BallGameResult {
     private final int ball;

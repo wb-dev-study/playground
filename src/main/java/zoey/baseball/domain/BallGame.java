@@ -1,4 +1,4 @@
-package baseball.domain;
+package zoey.baseball.domain;
 
 import java.util.List;
 import java.util.stream.Collectors;

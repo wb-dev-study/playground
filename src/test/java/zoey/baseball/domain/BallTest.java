@@ -1,7 +1,5 @@
-package baseball.domain;
+package zoey.baseball.domain;
 
-import baseball.domain.Ball;
-import baseball.domain.BallStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
