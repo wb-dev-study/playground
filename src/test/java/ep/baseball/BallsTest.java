@@ -8,6 +8,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -44,23 +46,38 @@ public class BallsTest {
     }
 
     @Test
-    @DisplayName("스트라이크 매치")
+    @DisplayName("3스트라이크")
     void balls_match_strike() {
-        Ball target = new Ball(1, 1);
-        assertThat(balls.match(target)).isEqualTo(MatchStatus.STRIKE);
+        Ball first = new Ball(1, 1);
+        Ball second = new Ball(2, 2);
+        Ball third = new Ball(3, 3);
+        Balls inputBalls = new Balls(first, second, third);
+
+        List<MatchStatus> expected = List.of(MatchStatus.STRIKE, MatchStatus.STRIKE, MatchStatus.STRIKE);
+        assertThat(balls.match(inputBalls)).containsAll(expected);
     }
 
     @Test
-    @DisplayName("볼 매치")
+    @DisplayName("1 스트라이크 2 볼")
     void balls_match_ball() {
-        Ball target = new Ball(1, 3);
-        assertThat(balls.match(target)).isEqualTo(MatchStatus.BALL);
+        Ball first = new Ball(2, 1);
+        Ball second = new Ball(1, 2);
+        Ball third = new Ball(3, 3);
+        Balls inputBalls = new Balls(first, second, third);
+
+        List<MatchStatus> expected = List.of(MatchStatus.BALL, MatchStatus.BALL, MatchStatus.STRIKE);
+        assertThat(balls.match(inputBalls)).containsAll(expected);
     }
 
     @Test
-    @DisplayName("낫싱 매치")
+    @DisplayName("낫싱")
     void balls_match_nothing() {
-        Ball target = new Ball(9, 3);
-        assertThat(balls.match(target)).isEqualTo(MatchStatus.NOTHING);
+        Ball first = new Ball(7, 1);
+        Ball second = new Ball(8, 2);
+        Ball third = new Ball(9, 3);
+        Balls inputBalls = new Balls(first, second, third);
+
+        List<MatchStatus> expected = List.of(MatchStatus.NOTHING, MatchStatus.NOTHING, MatchStatus.NOTHING);
+        assertThat(balls.match(inputBalls)).containsAll(expected);
     }
 }

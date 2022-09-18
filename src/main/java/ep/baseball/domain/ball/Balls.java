@@ -31,7 +31,16 @@ public class Balls {
         }
     }
 
-    public MatchStatus match(Ball target) {
+    public List<MatchStatus> match(Balls targetBalls) {
+        List<MatchStatus> matchResult = new ArrayList<>();
+        targetBalls.balls.forEach(target -> {
+            MatchStatus result = match(target);
+            matchResult.add(result);
+        });
+        return matchResult;
+    }
+
+    private MatchStatus match(Ball target) {
         for (Ball ball : this.balls) {
             if (ball.isStrike(target)) {
                 return MatchStatus.STRIKE;
