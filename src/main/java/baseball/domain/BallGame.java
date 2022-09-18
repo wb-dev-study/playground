@@ -43,16 +43,16 @@ public class BallGame {
 
     public BallGameResult play() {
         BallGameResult ballGameResult = new BallGameResult();
-        ballGameResult.setBall(ballCount());
-        ballGameResult.setStrike(strikeCount());
+        ballGameResult.setBall(countSameBallNumber());
+        ballGameResult.setStrike(countSamePlaceSameBallNumber());
         return ballGameResult;
     }
 
-    private int ballCount() {
+    private int countSameBallNumber() {
         return (int) player.stream().filter(player -> answer.stream().anyMatch(ball -> player.compare(ball) == BallStatus.BALL)).count();
     }
 
-    private int strikeCount() {
+    private int countSamePlaceSameBallNumber() {
         return (int) player.stream().filter(player -> answer.stream().anyMatch(ball -> player.compare(ball) == BallStatus.STRIKE)).count();
     }
 }
