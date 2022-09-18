@@ -88,4 +88,14 @@ public class BallsTest {
         Balls balls = new Balls(new RandomGenerateStrategy());
         assertThat(balls).isNotNull();
     }
+
+    @Test
+    @DisplayName("동일한 야구공 리스트인지")
+    void balls_is_equal() {
+        Ball first = new Ball(1, 1);
+        Ball second = new Ball(2,2);
+        Ball third = new Ball(3, 3);
+        Balls target = new Balls(first, second, third);
+        assertThat(balls.isEqual(target)).isTrue();
+    }
 }

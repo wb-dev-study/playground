@@ -36,6 +36,10 @@ public class Balls {
         }
     }
 
+    public Boolean isEqual(Balls target) {
+        return match(target).stream().allMatch(status -> status == MatchStatus.STRIKE);
+    }
+
     public List<MatchStatus> match(Balls targetBalls) {
         List<MatchStatus> matchResult = new ArrayList<>();
         targetBalls.balls.forEach(target -> {
