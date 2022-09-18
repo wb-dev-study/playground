@@ -1,10 +1,12 @@
 package ep.baseball;
 
+import ep.baseball.domain.MatchStatus;
 import ep.baseball.domain.ball.Ball;
 import ep.baseball.exception.CreateBallException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 
@@ -24,5 +26,13 @@ public class BallTest {
         assertThatThrownBy(() ->
                 new Ball(1, 4)
         ).isInstanceOf(CreateBallException.class);
+    }
+
+    @Test
+    @DisplayName("볼의 숫자와 위치가 같으면 STRIKE 로직이다")
+    void ball_match_strike() {
+        Ball first = new Ball(1, 1);
+        Ball second = new Ball(1, 1);
+        assertThat(first.match(second)).isEqualTo(MatchStatus.STRIKE);
     }
 }

@@ -18,4 +18,19 @@ public class BallNumber {
             throw new CreateBallException("숫자는 9보다 클 수 없습니다.");
         }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        BallNumber that = (BallNumber) o;
+
+        return number.equals(that.number);
+    }
+
+    @Override
+    public int hashCode() {
+        return number.hashCode();
+    }
 }

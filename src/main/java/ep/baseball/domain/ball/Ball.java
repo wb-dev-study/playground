@@ -1,5 +1,7 @@
 package ep.baseball.domain.ball;
 
+import ep.baseball.domain.MatchStatus;
+
 public class Ball {
 
     private final BallNumber number;
@@ -31,5 +33,16 @@ public class Ball {
         int result = number.hashCode();
         result = 31 * result + position.hashCode();
         return result;
+    }
+
+    public MatchStatus match(Ball target) {
+        if (isStrike(target)) {
+            return MatchStatus.STRIKE;
+        }
+        return MatchStatus.NOTHING;
+    }
+
+    public Boolean isStrike(Ball target) {
+        return this.equals(target);
     }
 }
