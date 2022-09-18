@@ -1,4 +1,4 @@
-package baseball;
+package baseball.domain;
 
 import java.util.Objects;
 
@@ -21,7 +21,7 @@ public class Ball {
         }
     }
 
-    public baseball.BallStatus compare(Ball ball) {
+    public BallStatus compare(Ball ball) {
         if (this.equals(ball)) {
             return BallStatus.STRIKE;
         }
