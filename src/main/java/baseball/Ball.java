@@ -21,7 +21,7 @@ public class Ball {
         }
     }
 
-    public baseball.BallStatus play(Ball ball) {
+    public baseball.BallStatus compare(Ball ball) {
         if (this.equals(ball)) {
             return BallStatus.STRIKE;
         }
