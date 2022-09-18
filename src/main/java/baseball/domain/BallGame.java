@@ -42,10 +42,7 @@ public class BallGame {
     }
 
     public BallGameResult play() {
-        BallGameResult ballGameResult = new BallGameResult();
-        ballGameResult.setBall(countSameBallNumber());
-        ballGameResult.setStrike(countSamePlaceSameBallNumber());
-        return ballGameResult;
+        return new BallGameResult(countSameBallNumber(), countSamePlaceSameBallNumber());
     }
 
     private int countSameBallNumber() {

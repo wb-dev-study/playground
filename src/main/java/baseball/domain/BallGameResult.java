@@ -1,22 +1,28 @@
 package baseball.domain;
 
 public class BallGameResult {
-    private int ball;
-    private int strike;
+    private final int ball;
+    private final int strike;
 
-    public int getBall() {
-        return ball;
-    }
+    public static int THREE_STRIKE = 3;
 
-    public void setBall(int ball) {
+    public BallGameResult(int ball, int strike) {
         this.ball = ball;
-    }
-
-    public int getStrike() {
-        return strike;
-    }
-
-    public void setStrike(int strike) {
         this.strike = strike;
+    }
+
+    public boolean isThreeStrike() {
+        return this.strike == THREE_STRIKE;
+    }
+
+    public String getResult() {
+        if (ball == 0 && strike == 0) {
+            return "nothing!!";
+        } else if (ball == 0) {
+            return String.format("%d 스트라이크", this.strike);
+        } else if (strike == 0) {
+            return String.format("%d 볼", this.ball);
+        }
+        return String.format("%d 볼 %d 스트라이크", this.ball, this.strike);
     }
 }
