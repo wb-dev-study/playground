@@ -3,6 +3,7 @@ package ep.baseball;
 import ep.baseball.domain.MatchStatus;
 import ep.baseball.domain.ball.Ball;
 import ep.baseball.domain.ball.Balls;
+import ep.baseball.domain.ball.strategy.RandomGenerateStrategy;
 import ep.baseball.exception.BallException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -79,5 +80,12 @@ public class BallsTest {
 
         List<MatchStatus> expected = List.of(MatchStatus.NOTHING, MatchStatus.NOTHING, MatchStatus.NOTHING);
         assertThat(balls.match(inputBalls)).containsAll(expected);
+    }
+
+    @Test
+    @DisplayName("랜덤 볼 리스트 생성")
+    void generate_balls_random() {
+        Balls balls = new Balls(new RandomGenerateStrategy());
+        assertThat(balls).isNotNull();
     }
 }

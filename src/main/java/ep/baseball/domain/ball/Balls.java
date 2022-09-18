@@ -1,6 +1,7 @@
 package ep.baseball.domain.ball;
 
 import ep.baseball.domain.MatchStatus;
+import ep.baseball.domain.ball.strategy.BallGenerateStrategy;
 import ep.baseball.exception.BallException;
 
 import java.util.ArrayList;
@@ -11,7 +12,11 @@ import java.util.stream.Collectors;
 
 public class Balls {
 
-    private final Set<Ball> balls = new HashSet<>();
+    private Set<Ball> balls = new HashSet<>();
+
+    public Balls(BallGenerateStrategy generateStrategy) {
+        this.balls = generateStrategy.generate();
+    }
 
     public Balls(final Ball first, final Ball second, final Ball third) {
         this.balls.add(first);
