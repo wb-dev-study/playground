@@ -29,7 +29,7 @@ public class BallTest {
     }
 
     @Test
-    @DisplayName("볼의 숫자와 위치가 같으면 STRIKE 로직이다")
+    @DisplayName("볼의 숫자와 위치가 같으면 STRIKE")
     void ball_match_strike() {
         Ball first = new Ball(1, 1);
         Ball second = new Ball(1, 1);
@@ -37,10 +37,18 @@ public class BallTest {
     }
 
     @Test
-    @DisplayName("볼의 숫자가 같고 위치가 다르면 BALL 로직이다")
+    @DisplayName("볼의 숫자가 같고 위치가 다르면 BALL")
     void ball_match_ball() {
         Ball first = new Ball(1, 1);
         Ball second = new Ball(1, 2);
         assertThat(first.match(second)).isEqualTo(MatchStatus.BALL);
+    }
+
+    @Test
+    @DisplayName("볼의 숫자가 같고 위치가 다르면 NOTHING")
+    void ball_match_nothing() {
+        Ball first = new Ball(1, 1);
+        Ball second = new Ball(9, 2);
+        assertThat(first.match(second)).isEqualTo(MatchStatus.NOTHING);
     }
 }
