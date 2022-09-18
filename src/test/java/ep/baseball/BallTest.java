@@ -35,4 +35,12 @@ public class BallTest {
         Ball second = new Ball(1, 1);
         assertThat(first.match(second)).isEqualTo(MatchStatus.STRIKE);
     }
+
+    @Test
+    @DisplayName("볼의 숫자가 같고 위치가 다르면 BALL 로직이다")
+    void ball_match_ball() {
+        Ball first = new Ball(1, 1);
+        Ball second = new Ball(1, 2);
+        assertThat(first.match(second)).isEqualTo(MatchStatus.BALL);
+    }
 }
