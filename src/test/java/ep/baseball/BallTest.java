@@ -33,7 +33,7 @@ public class BallTest {
     void ball_match_strike() {
         Ball first = new Ball(1, 1);
         Ball second = new Ball(1, 1);
-        assertThat(first.match(second)).isEqualTo(MatchStatus.STRIKE);
+        assertThat(first.isStrike(second)).isTrue();
     }
 
     @Test
@@ -41,14 +41,6 @@ public class BallTest {
     void ball_match_ball() {
         Ball first = new Ball(1, 1);
         Ball second = new Ball(1, 2);
-        assertThat(first.match(second)).isEqualTo(MatchStatus.BALL);
-    }
-
-    @Test
-    @DisplayName("볼의 숫자가 같고 위치가 다르면 NOTHING")
-    void ball_match_nothing() {
-        Ball first = new Ball(1, 1);
-        Ball second = new Ball(9, 2);
-        assertThat(first.match(second)).isEqualTo(MatchStatus.NOTHING);
+        assertThat(first.isBall(second)).isTrue();
     }
 }

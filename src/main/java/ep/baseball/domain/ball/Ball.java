@@ -39,21 +39,11 @@ public class Ball {
         return result;
     }
 
-    public MatchStatus match(Ball target) {
-        if (isStrike(target)) {
-            return MatchStatus.STRIKE;
-        }
-        if (isBall(target)) {
-            return MatchStatus.BALL;
-        }
-        return MatchStatus.NOTHING;
-    }
-
     public Boolean isStrike(Ball target) {
         return this.equals(target);
     }
 
-    private boolean isBall(Ball target) {
+    public Boolean isBall(Ball target) {
         return this.number.equals(target.ballNumber()) && !this.position.equals(target.position());
     }
 }
