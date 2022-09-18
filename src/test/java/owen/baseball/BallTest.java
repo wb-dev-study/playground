@@ -1,6 +1,7 @@
 package owen.baseball;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import owen.baseball.domain.BallStatus;
 import owen.baseball.domain.ball.Ball;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,6 +16,7 @@ public class BallTest {
     }
 
     @Test
+    @DisplayName("낫싱 테스트")
     void nothingTest() {
         Ball userBall = new Ball(2, 1);
 
@@ -23,6 +25,7 @@ public class BallTest {
     }
 
     @Test
+    @DisplayName("스트라이크 테스트")
     public void strikeTest() {
         Ball userBall = new Ball(1, 4);
 
@@ -32,6 +35,7 @@ public class BallTest {
     }
 
     @Test
+    @DisplayName("볼 테스트")
     public void ballTest() {
         Ball userBall = new Ball(1, 2);
 
