@@ -11,7 +11,7 @@ public class BallFactory {
         Set<Integer> randomSet = new LinkedHashSet<>();
         Random random = new Random();
         while (randomSet.size() < 3) {
-            randomSet.add(random.nextInt(9));
+            randomSet.add(random.nextInt(9) + 1);
         }
         List<Integer> randomList = new ArrayList<>(randomSet);
         return new Balls(randomList);
