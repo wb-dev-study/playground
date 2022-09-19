@@ -8,10 +8,10 @@ import java.util.*;
 public class BallFactory {
 
     public static Balls computerBall() {
-        Set<Integer> randomSet = new HashSet<>();
+        Set<Integer> randomSet = new LinkedHashSet<>();
         Random random = new Random();
         while (randomSet.size() < 3) {
-            randomSet.add(random.nextInt((9 - 1) + 1) + 1);
+            randomSet.add(random.nextInt(9));
         }
         List<Integer> randomList = new ArrayList<>(randomSet);
         return new Balls(randomList);
