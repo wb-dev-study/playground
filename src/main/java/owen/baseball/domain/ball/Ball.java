@@ -20,13 +20,13 @@ public class Ball {
             return BallStatus.STRIKE;
         }
 
-        if (isBAll(ball)) {
+        if (isBall(ball)) {
             return BallStatus.BALL;
         }
         return BallStatus.NOTHING;
     }
 
-    public boolean isBAll(Ball ball) {
+    public boolean isBall(Ball ball) {
         return this.ballNumber == ball.ballNumber;
     }
 
