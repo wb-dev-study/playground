@@ -2,7 +2,7 @@ package jay.baseball;
 
 import java.util.List;
 
-public class Main {
+public class BaseBallGame {
     public static void main(String[] args) {
         PlayerNumber baseballGame = new PlayerNumber();
         ComputerRandomNumber computerRandomNumber = new ComputerRandomNumber();

@@ -36,8 +36,8 @@ public class BaseballBatsmanTest {
     @Test
     @DisplayName("볼 테스트")
     public void ball() {
-        int total = baseballBatsman.total(computer, Arrays.asList(3, 2, 1));
-        int strike = baseballBatsman.strike(computer, Arrays.asList(3, 2, 1));
+        int total = baseballBatsman.total(computer, Arrays.asList(3, 1, 2));
+        int strike = baseballBatsman.strike(computer, Arrays.asList(3, 1, 2));
 
         int ball = baseballBatsman.ball(total, strike);
         Assertions.assertThat(3).isEqualTo(ball);
