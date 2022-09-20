@@ -1,20 +1,15 @@
 package zoey.baseball.domain;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class NumberGenerator {
     public static int MAX_SIZE = 3;
-    List<Integer> numbers = new ArrayList<>();
+    HashSet<Integer> numbers = new LinkedHashSet<>();
     public List<Integer> createRandomNumbers() {
         while (!isMaxSize()) {
-            int number = getRandomNumber();
-            if (!numbers.contains(number)) {
-                numbers.add(number);
-            }
+            numbers.add(getRandomNumber());
         }
-        return numbers;
+        return new ArrayList<>(numbers);
     }
 
     private int getRandomNumber() {
