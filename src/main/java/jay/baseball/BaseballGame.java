@@ -2,28 +2,9 @@ package jay.baseball;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
 public class BaseballGame {
-    public int random() {
-        Random random = new Random();
-        return random.nextInt(9) + 1;
-    }
-
-    public List<Integer> create() {
-        List<Integer> computerNumber = new ArrayList<>();
-        while (computerNumber.size() < 3) {
-            int randomNumber = random();
-            if (computerNumber.contains(randomNumber)) {
-                continue;
-            } else {
-                computerNumber.add(randomNumber);
-            }
-        }
-        return computerNumber;
-    }
-
     public int total(List<Integer> computer, List<Integer> player) {
         int total = 0;
         for (int i = 0; i < player.size(); i++) {
