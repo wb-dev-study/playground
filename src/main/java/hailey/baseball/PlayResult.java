@@ -1,4 +1,4 @@
-package baseball;
+package hailey.baseball;
 
 public class PlayResult {
 

@@ -1,4 +1,4 @@
-package baseball;
+package hailey.baseball;
 
 public enum BallStatus {
     BALL, STRIKE, NOTHING;

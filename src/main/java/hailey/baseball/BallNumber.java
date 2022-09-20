@@ -1,9 +1,13 @@
-package baseball;
+package hailey.baseball;
 
 public class BallNumber {
-    public int no;
+    private int no;
 
     public BallNumber(int no) {
         this.no = ValidationUtils.validateNumber(no);
+    }
+
+    public int getNo() {
+        return this.no;
     }
 }

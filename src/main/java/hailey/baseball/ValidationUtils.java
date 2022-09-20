@@ -1,4 +1,4 @@
-package baseball;
+package hailey.baseball;
 
 class ValidationUtils {
     public static final int MIN_NUMBER = 1;

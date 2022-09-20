@@ -1,4 +1,4 @@
-package baseball;
+package hailey.baseball;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -30,9 +30,9 @@ class BallTest {
     @DisplayName("볼 생성")
     void make_balls() {
         List<Ball> balls = Ball.makeBall(Arrays.asList(8, 5, 9));
-        assertThat(balls.get(0).number.no).isEqualTo(8);
-        assertThat(balls.get(1).number.no).isEqualTo(5);
-        assertThat(balls.get(2).number.no).isEqualTo(9);
+        assertThat(balls.get(0).number.getNo()).isEqualTo(8);
+        assertThat(balls.get(1).number.getNo()).isEqualTo(5);
+        assertThat(balls.get(2).number.getNo()).isEqualTo(9);
     }
 
     @Test

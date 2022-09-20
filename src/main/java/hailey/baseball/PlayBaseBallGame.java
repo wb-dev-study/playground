@@ -1,8 +1,8 @@
-package baseball;
+package hailey.baseball;
 
 import java.util.*;
 
-import static baseball.ValidationUtils.checkNotDuplicate;
+import static hailey.baseball.ValidationUtils.checkNotDuplicate;
 
 public class PlayBaseBallGame {
     Scanner scanner = new Scanner(System.in);

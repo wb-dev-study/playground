@@ -1,4 +1,4 @@
-package baseball;
+package hailey.baseball;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,10 +36,10 @@ public class Ball {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Ball ball = (Ball) o;
-        return position == ball.position && number.no == ball.number.no;
+        return position == ball.position && number.getNo() == ball.number.getNo();
     }
 
     private boolean matchBallNo(BallNumber number) {
-        return this.number.no == number.no;
+        return this.number.getNo() == number.getNo();
     }
 }
