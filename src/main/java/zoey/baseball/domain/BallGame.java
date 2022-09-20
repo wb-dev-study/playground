@@ -46,10 +46,10 @@ public class BallGame {
     }
 
     private int countSameBallNumber() {
-        return (int) player.stream().filter(player -> answer.stream().anyMatch(ball -> player.compare(ball) == BallStatus.BALL)).count();
+        return (int) player.stream().filter(player -> answer.stream().anyMatch(ball -> player.compare(ball).isBall())).count();
     }
 
     private int countSamePlaceSameBallNumber() {
-        return (int) player.stream().filter(player -> answer.stream().anyMatch(ball -> player.compare(ball) == BallStatus.STRIKE)).count();
+        return (int) player.stream().filter(player -> answer.stream().anyMatch(ball -> player.compare(ball).isStrike())).count();
     }
 }
