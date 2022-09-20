@@ -18,9 +18,11 @@ public class BallGameResult {
     public String getResult() {
         if (ball == 0 && strike == 0) {
             return "nothing!!";
-        } else if (ball == 0) {
+        }
+        if (ball == 0) {
             return String.format("%d 스트라이크", this.strike);
-        } else if (strike == 0) {
+        }
+        if (strike == 0) {
             return String.format("%d 볼", this.ball);
         }
         return String.format("%d 볼 %d 스트라이크", this.ball, this.strike);
