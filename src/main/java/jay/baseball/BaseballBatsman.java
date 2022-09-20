@@ -27,4 +27,22 @@ public class BaseballBatsman {
     public int ball(int total, int strike) {
         return total - strike;
     }
+
+    public String baseballResult(int total, int strike, int ball) {
+        String result = "";
+
+        if (total == 0) {
+            return result = "낫싱";
+        }
+
+        if (strike == 0) {
+            return result = ball + "볼";
+        }
+
+        if (ball == 0) {
+            return result = strike + "스트라이크";
+        }
+
+        return result = ball + "볼 " + strike + "스트라이크";
+    }
 }
