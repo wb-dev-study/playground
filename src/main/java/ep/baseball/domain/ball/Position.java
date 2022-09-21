@@ -11,6 +11,9 @@ public class Position {
     }
 
     public void validate(final Integer position) {
+        if (position == null) {
+            throw new CreateBallException("위치는 null 이면 안됩니다.");
+        }
         if (position < 0 || position > 3) {
             throw new CreateBallException("숫자의 위치는 1 ~ 3 사이의 값만 가능합니다.");
         }

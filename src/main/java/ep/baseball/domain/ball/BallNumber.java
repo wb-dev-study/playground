@@ -11,6 +11,9 @@ public class BallNumber {
     }
 
     private void validate(final Integer number) {
+        if (number == null) {
+            throw new CreateBallException("숫자는 null 이면 안됩니다.");
+        }
         if (number < 1) {
             throw new CreateBallException("숫자는 1보다 작을 수 없습니다.");
         }

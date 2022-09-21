@@ -21,6 +21,14 @@ public class BallTest {
     }
 
     @Test
+    @DisplayName("볼 숫자와 위치에 null 이 들어갈 경우를 방지해준다.")
+    void ball_number_create_null() {
+        assertThatThrownBy(() ->
+                new Ball(null, null)
+        ).isInstanceOf(CreateBallException.class);
+    }
+
+    @Test
     @DisplayName("볼의 숫자는 1~3 에만 위치합니다.")
     void ball_position_create() {
         assertThatThrownBy(() ->
