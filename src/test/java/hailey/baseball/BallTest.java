@@ -30,9 +30,9 @@ class BallTest {
     @DisplayName("볼 생성")
     void make_balls() {
         List<Ball> balls = Ball.makeBall(Arrays.asList(8, 5, 9));
-        assertThat(balls.get(0).number.getNo()).isEqualTo(8);
-        assertThat(balls.get(1).number.getNo()).isEqualTo(5);
-        assertThat(balls.get(2).number.getNo()).isEqualTo(9);
+        assertThat(balls.get(0).getNumber().getNo()).isEqualTo(8);
+        assertThat(balls.get(1).getNumber().getNo()).isEqualTo(5);
+        assertThat(balls.get(2).getNumber().getNo()).isEqualTo(9);
     }
 
     @Test
