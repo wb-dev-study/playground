@@ -46,4 +46,8 @@ public class Ball {
     public Boolean isBall(Ball target) {
         return this.number.equals(target.ballNumber()) && !this.position.equals(target.position());
     }
+
+    public static Ball of(final Integer number, final Integer position) {
+        return new Ball(number, position);
+    }
 }

@@ -60,4 +60,8 @@ public class Balls {
         }
         return MatchStatus.NOTHING;
     }
+
+    public static Balls of(final Ball first, final Ball second, final Ball third) {
+        return new Balls(first, second, third);
+    }
 }
