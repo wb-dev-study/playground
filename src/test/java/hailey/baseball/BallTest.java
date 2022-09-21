@@ -22,8 +22,8 @@ class BallTest {
     @Test
     @DisplayName("잘못된 num으로 Ball 생성시 IllegalArgumentException 발생")
     void create_with_wrong_num() {
-        assertThatThrownBy(() -> new Ball(1, 0)).hasMessage("Utility class");
-        assertThatThrownBy(() -> new Ball(1, 10)).hasMessage("Utility class");
+        assertThatThrownBy(() -> new Ball(1, 0)).hasMessage("숫자는 1~9 사이여야 합니다.");
+        assertThatThrownBy(() -> new Ball(1, 10)).hasMessage("숫자는 1~9 사이여야 합니다.");
     }
 
     @Test
