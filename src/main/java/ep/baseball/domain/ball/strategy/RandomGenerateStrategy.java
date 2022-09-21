@@ -5,6 +5,8 @@ import ep.baseball.domain.ball.Ball;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 public class RandomGenerateStrategy implements BallGenerateStrategy{
 
@@ -13,12 +15,12 @@ public class RandomGenerateStrategy implements BallGenerateStrategy{
 
     @Override
     public Set<Ball> generate() {
-        Set<Ball> balls = new HashSet<>();
+        Set<Integer> numberSet = new HashSet<>();
         Random random = new Random();
-        for (int position = 1; position <= 3; position++) {
-            Ball ball = new Ball(random.nextInt(MAX_BALL_NUMBER_INT) + MIN_BALL_NUMBER_INT, position);
-            balls.add(ball);
+        while (numberSet.size() < 3) {
+            numberSet.add(random.nextInt(MAX_BALL_NUMBER_INT) + MIN_BALL_NUMBER_INT);
         }
-        return balls;
+        AtomicInteger index = new AtomicInteger();
+        return numberSet.stream().map(number -> new Ball(number, index.addAndGet(1))).collect(Collectors.toSet());
     }
 }
