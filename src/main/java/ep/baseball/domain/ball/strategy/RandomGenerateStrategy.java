@@ -3,6 +3,7 @@ package ep.baseball.domain.ball.strategy;
 import ep.baseball.domain.ball.Ball;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -15,7 +16,7 @@ public class RandomGenerateStrategy implements BallGenerateStrategy{
 
     @Override
     public Set<Ball> generate() {
-        Set<Integer> numberSet = new HashSet<>();
+        Set<Integer> numberSet = new LinkedHashSet<>();
         Random random = new Random();
         while (numberSet.size() < 3) {
             numberSet.add(random.nextInt(MAX_BALL_NUMBER_INT) + MIN_BALL_NUMBER_INT);
