@@ -4,9 +4,7 @@ import hailey.racingcar.domain.Car;
 import hailey.racingcar.domain.Score;
 import hailey.racingcar.util.ValidationUtils;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Application {
 
@@ -20,6 +18,17 @@ public class Application {
 
         System.out.println("시도할 회수는 몇회인가요?");
         int repeatNumber = scanner.nextInt();
+        for (int i = 0; i < repeatNumber; i++) {
+            cars.forEach((k, v) -> {
+                Random random = new Random();
+                int advanceNumber = random.nextInt(100) % 9;
+                if (advanceNumber >= 4) {
+                    v.setScore(v.getScore() + advanceNumber);
+                    v.getProgress().append("-".repeat(advanceNumber));
+                }
+                System.out.println(k + " : " + v.getProgress().toString());
+            });
+        }
     }
 
     private static Map<Car, Score> readyGame(String inputCarNames) {
