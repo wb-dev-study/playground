@@ -26,8 +26,9 @@ public class Application {
                     v.setScore(v.getScore() + advanceNumber);
                     v.getProgress().append("-".repeat(advanceNumber));
                 }
-                System.out.println(k + " : " + v.getProgress().toString());
+                System.out.println(k.getName() + " : " + v.getProgress().toString());
             });
+            System.out.println();
         }
 
         cars.forEach((k, v) -> {
@@ -59,7 +60,7 @@ public class Application {
         Map<Car, Score> cars = new LinkedHashMap<>();
         String[] carNames = inputCarNames.replace(" ", "").split(",");
         for (int i = 0; i < carNames.length; i++) {
-            if (ValidationUtils.validate(carNames[i], carNames)) {
+            if (ValidationUtils.validate(i, carNames[i], carNames)) {
                 cars.put(new Car(carNames[i]), new Score());
             }
         }
