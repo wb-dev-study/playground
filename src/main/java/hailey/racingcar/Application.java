@@ -41,6 +41,18 @@ public class Application {
                 }
             });
         });
+
+        Iterator<Car> winner = cars.keySet().iterator();
+        int count = 0;
+        while(winner.hasNext()) {
+            String win = winner.next().getName();
+            System.out.print(win);
+            count++;
+            if (cars.size() != count) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("가 최종 우승했습니다.");
     }
 
     private static Map<Car, Score> readyGame(String inputCarNames) {
