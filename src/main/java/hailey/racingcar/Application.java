@@ -29,6 +29,18 @@ public class Application {
                 System.out.println(k + " : " + v.getProgress().toString());
             });
         }
+
+        cars.forEach((k, v) -> {
+            cars.forEach((a, b) -> {
+                if (!k.equals(a)) {
+                    if (v.getScore() > b.getScore()) {
+                        cars.remove(a);
+                    } else if (v.getScore() < b.getScore()) {
+                        cars.remove(k);
+                    }
+                }
+            });
+        });
     }
 
     private static Map<Car, Score> readyGame(String inputCarNames) {
