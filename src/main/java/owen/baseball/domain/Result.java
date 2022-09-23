@@ -1,7 +1,5 @@
-package owen.baseball.util;
+package owen.baseball.domain;
 
-
-import owen.baseball.domain.BallStatus;
 
 public class Result {
 
@@ -16,7 +14,7 @@ public class Result {
         return ball;
     }
 
-    public Result checkResult(BallStatus ballStatus) {
+    public void checkResult(BallStatus ballStatus) {
         if (ballStatus.isStrike()) {
             strike++;
         }
@@ -24,7 +22,6 @@ public class Result {
         if (ballStatus.isBall()) {
             ball++;
         }
-        return this;
     }
 
     public String doPrint() {
