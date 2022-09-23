@@ -2,7 +2,7 @@ package hailey.racingcar.domain;
 
 public class Score {
     private int score;
-    private StringBuilder progress;
+    private final StringBuilder progress;
 
     public int getScore() {
         return this.score;

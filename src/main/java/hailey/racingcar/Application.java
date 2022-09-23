@@ -4,7 +4,12 @@ import hailey.racingcar.domain.Car;
 import hailey.racingcar.domain.Score;
 import hailey.racingcar.util.ValidationUtils;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Random;
+import java.util.Scanner;
+
 
 public class Application {
 
@@ -31,29 +36,29 @@ public class Application {
             System.out.println();
         }
 
+        Map<Car, Score> winners = new LinkedHashMap<>();
+        final int[] max = {0};
         cars.forEach((k, v) -> {
-            cars.forEach((a, b) -> {
-                if (!k.equals(a)) {
-                    if (v.getScore() > b.getScore()) {
-                        cars.remove(a);
-                    } else if (v.getScore() < b.getScore()) {
-                        cars.remove(k);
-                    }
-                }
-            });
+            if (v.getScore() == max[0]) {
+                winners.put(k, v);
+            } else if (v.getScore() > max[0]) {
+                winners.clear();
+                winners.put(k, v);
+                max[0] = v.getScore();
+            }
         });
 
-        Iterator<Car> winner = cars.keySet().iterator();
+        Iterator<Car> winner = winners.keySet().iterator();
         int count = 0;
         while(winner.hasNext()) {
             String win = winner.next().getName();
             System.out.print(win);
             count++;
-            if (cars.size() != count) {
+            if (winners.size() != count) {
                 System.out.print(", ");
             }
         }
-        System.out.println("가 최종 우승했습니다.");
+        System.out.println(" 가 최종 우승했습니다.");
     }
 
     private static Map<Car, Score> readyGame(String inputCarNames) {
