@@ -21,7 +21,7 @@ public class PlayGame {
         endGame(winners);
     }
 
-    private void turnAround(Map<Car, Score> cars) {
+    public void turnAround(Map<Car, Score> cars) {
         cars.forEach((car, score) -> {
             int advanceNumber = makeRandomNum();
             if (GameRulesUtils.isPossibleAdvance(advanceNumber)) {
@@ -43,7 +43,7 @@ public class PlayGame {
         return advanceNumber;
     }
 
-    private Map<Car, Score> findWinners(Map<Car, Score> cars) {
+    public Map<Car, Score> findWinners(Map<Car, Score> cars) {
         Map<Car, Score> winners = new LinkedHashMap<>();
         final int[] max = {0};
         cars.forEach((car, score) -> {
@@ -58,7 +58,7 @@ public class PlayGame {
         return winners;
     }
 
-    private void endGame(Map<Car, Score> winners) {
+    public void endGame(Map<Car, Score> winners) {
         Iterator<Car> winner = winners.keySet().iterator();
         int count = 0;
         while(winner.hasNext()) {
