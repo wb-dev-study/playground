@@ -17,7 +17,16 @@ public class Score {
         this.progress = new StringBuilder();
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void advance(int advanceNumber) {
+        this.score = this.getScore() + advanceNumber;
+        this.progress.append("-".repeat(advanceNumber));
+    }
+
+    public boolean isOnlyMaxScore(int max) {
+        return this.getScore() > max;
+    }
+
+    public boolean isSameMaxScore(int max) {
+        return this.getScore() == max;
     }
 }
