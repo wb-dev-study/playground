@@ -10,23 +10,23 @@ public class Validate {
     private static final int BALL_SIZE = 3;
 
     public void validCheck(String[] userInput) {
-        validationBasic(!sizeValid(userInput), "3자리의 숫자를 입력 바랍니다.");
-        validationBasic(!duplicateValid(userInput), "중복된 숫자는 입력 불가능 합니다.");
+        validationBasic(!isBallSize(userInput), "3자리의 숫자를 입력 바랍니다.");
+        validationBasic(!isDuplicate(userInput), "중복된 숫자는 입력 불가능 합니다.");
 
         for (String inputString : userInput) {
             validationBasic(!isIntegerType(inputString), "정수만 입력 가능합니다.");
-            validationBasic(!rangeValid(inputString), "1 ~ 9 까지의 정수만 입력이 가능합니다.");
+            validationBasic(!isRange(inputString), "1 ~ 9 까지의 정수만 입력이 가능합니다.");
         }
     }
 
-    private boolean duplicateValid(String[] userInput) {
+    private boolean isDuplicate(String[] userInput) {
         return Arrays.stream(userInput).distinct().count() == userInput.length;
     }
-    private boolean sizeValid(String[] userInput) {
+    private boolean isBallSize(String[] userInput) {
         return userInput.length == BALL_SIZE;
     }
 
-    private boolean rangeValid(String userInput) {
+    private boolean isRange(String userInput) {
         return Integer.parseInt(userInput) >= MIN_NUMBER && Integer.parseInt(userInput) <= MAX_NUMBER;
     }
 
