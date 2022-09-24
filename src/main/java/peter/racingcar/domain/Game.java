@@ -26,6 +26,19 @@ public class Game {
         validate();
     }
 
+    public void play() {
+        for (Car car : entry) {
+            car.move();
+        }
+    }
+
+    public void showProgress() {
+        for (Car car : entry) {
+            car.showLocation();
+        }
+    }
+
+
 
     private void validate() {
         if (entry.isEmpty()) {

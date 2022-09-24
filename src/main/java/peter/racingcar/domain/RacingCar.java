@@ -2,6 +2,7 @@ package peter.racingcar.domain;
 
 import peter.racingcar.exception.EntryNameTooLongException;
 
+import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -27,6 +28,19 @@ public class RacingCar implements Car {
         return name;
     }
 
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        final RacingCar racingCar = (RacingCar) o;
+        return Objects.equals(name, racingCar.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
+
     public int getDistance() {
         return distance;
     }
@@ -50,7 +64,7 @@ public class RacingCar implements Car {
         for (int start = 0; start < distance; start++) {
             distanceRange += DISTANCE_CHARACTER;
         }
-        System.out.println(distanceRange);
+        System.out.println(name + " : + " + distanceRange);
     }
 
     private boolean isMovable(int randomValue) {
