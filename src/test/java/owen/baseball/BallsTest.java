@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import owen.baseball.domain.BallStatus;
 import owen.baseball.domain.ball.Ball;
 import owen.baseball.domain.ball.Balls;
-import owen.baseball.util.BallFactory;
 
 import java.util.Arrays;
 

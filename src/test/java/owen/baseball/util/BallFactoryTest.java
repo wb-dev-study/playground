@@ -3,10 +3,8 @@ package owen.baseball.util;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import owen.baseball.domain.ball.Ball;
+import owen.baseball.domain.ball.BallFactory;
 import owen.baseball.domain.ball.Balls;
-
-import java.util.Arrays;
 
 class BallFactoryTest {
 
