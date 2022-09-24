@@ -20,7 +20,7 @@ public class RacingCar implements Car {
 
     public RacingCar(String name) {
         this.name = name;
-        random = new Random(System.currentTimeMillis());
+        random = new Random();
         validate();
     }
 
@@ -64,7 +64,7 @@ public class RacingCar implements Car {
         for (int start = 0; start < distance; start++) {
             distanceRange += DISTANCE_CHARACTER;
         }
-        System.out.println(name + " : + " + distanceRange);
+        System.out.println(name + " : " + distanceRange);
     }
 
     private boolean isMovable(int randomValue) {

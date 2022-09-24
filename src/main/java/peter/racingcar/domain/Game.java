@@ -26,16 +26,31 @@ public class Game {
         validate();
     }
 
+    public Game(GameEntryInput gameEntryInput) {
+        this.entry = gameEntryInput.getEntries();
+        this.round = gameEntryInput.getRound();
+        validate();
+    }
+
     public void play() {
+        for (int round = 0; round < this.round; round++) {
+            System.out.println(round + "회차");
+            drive();
+        }
+    }
+
+    public void drive() {
         for (Car car : entry) {
             car.move();
         }
+        showProgress();
     }
 
     public void showProgress() {
         for (Car car : entry) {
             car.showLocation();
         }
+        System.out.println();
     }
 
 

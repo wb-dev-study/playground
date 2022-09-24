@@ -20,7 +20,7 @@ public class GameEntryInputTest {
     @Test
     @DisplayName("게임 참가자 입력 테스트")
     void normalGameEntryTest() {
-        GameEntryInput gameEntryInput = new GameEntryInput("peter,owen,ep,zoey, jay, haile", 5);
+        GameEntryInput gameEntryInput = new GameEntryInput("peter,owen,ep,zoey, jay, haile", "5");
         List<Car> entry = Arrays.asList(new RacingCar("peter"), new RacingCar("owen"), new RacingCar("ep"), new RacingCar("zoey"), new RacingCar("jay"), new RacingCar("haile"));
         Assertions.assertThat(gameEntryInput.getEntries()).isEqualTo(entry);
     }
@@ -29,6 +29,6 @@ public class GameEntryInputTest {
     @Test
     @DisplayName("참가자가 충분하지 않을 때 발생하는 예외")
     void notEnoughEntryException() {
-        Assertions.assertThatThrownBy(() -> new GameEntryInput("peter", 5)).isInstanceOf(NotEnoughEntryException.class);
+        Assertions.assertThatThrownBy(() -> new GameEntryInput("peter", "5")).isInstanceOf(NotEnoughEntryException.class);
     }
 }
