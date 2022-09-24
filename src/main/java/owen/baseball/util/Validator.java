@@ -2,7 +2,7 @@ package owen.baseball.util;
 
 import java.util.Arrays;
 
-public class Validate {
+public class Validator {
 
     private static final int MIN_NUMBER = 1;
     private static final int MAX_NUMBER = 9;

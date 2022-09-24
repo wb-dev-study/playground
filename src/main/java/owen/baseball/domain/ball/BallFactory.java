@@ -1,8 +1,7 @@
 package owen.baseball.domain.ball;
 
 
-import owen.baseball.domain.ball.Balls;
-import owen.baseball.util.Validate;
+import owen.baseball.util.Validator;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class BallFactory {
 
-    public static final Validate validate = new Validate();
+    public static final Validator validator = new Validator();
 
     public static Balls computerBall() {
         Random random = new Random();
@@ -29,7 +28,7 @@ public class BallFactory {
 
     public static Balls makeBall(String userInput) {
         String[] splitInput = userInput.split("");
-        validate.validCheck(splitInput);
+        validator.validCheck(splitInput);
         List<Integer> userBallList = Arrays.stream(splitInput).map(Integer::parseInt).collect(Collectors.toList());
         return new Balls(userBallList);
     }
