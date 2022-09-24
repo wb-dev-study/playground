@@ -23,6 +23,14 @@ class CarTest {
                 .withMessage("자동차 이름은 5자 이하만 가능합니다");
     }
 
+    @DisplayName("이름에 공백 제거 후 validate")
+    @Test
+    void checkCarNameLengthAfterTrim() {
+        Car zoeyCar = new Car(" zoey ");
+
+        assertThat(zoeyCar).isNotNull();
+    }
+
     @DisplayName("1칸 이동 후 현재 위치")
     @Test
     void getNameAndLocation가() {
