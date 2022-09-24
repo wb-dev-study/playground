@@ -21,13 +21,13 @@ public class Game {
     }
 
     public Game(List<Car> entry, Integer round) {
-        validate(entry, round);
         this.entry = entry;
         this.round = round;
+        validate();
     }
 
 
-    private void validate(List<Car> entry, Integer round) {
+    private void validate() {
         if (entry.isEmpty()) {
             throw new EmptyEntryException("참가 차량이 없습니다.");
         }

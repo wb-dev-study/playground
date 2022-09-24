@@ -31,7 +31,7 @@ public class RacingCar implements Car {
         return distance;
     }
     private void validate() {
-        if (this.name.length() > NAME_LIMIT) {
+        if (name.length() > NAME_LIMIT) {
             throw new EntryNameTooLongException("참가자의 이름은 " + NAME_LIMIT + "자 이하만 가능합니다.");
         }
     }
