@@ -17,9 +17,8 @@ public class BallFactory {
 
     public static final Validate validate = new Validate();
 
-    public static final Random random = new Random();
-
     public static Balls computerBall() {
+        Random random = new Random();
         Set<Integer> randomSet = new LinkedHashSet<>();
         while (randomSet.size() < 3) {
             randomSet.add(random.nextInt(9) + 1);

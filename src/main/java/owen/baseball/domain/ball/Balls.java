@@ -1,7 +1,7 @@
 package owen.baseball.domain.ball;
 
 import owen.baseball.domain.BallStatus;
-import owen.baseball.util.Result;
+import owen.baseball.domain.Result;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,20 +14,21 @@ public class Balls {
         this.answerBalls = createBalls(answerBall);
     }
 
-    public Result play(Balls userBalls) {
+    public Result play(Balls computerBalls) {
         Result result = new Result();
-
         for (Ball ball : answerBalls) {
-            result.checkResult(userBalls.playBall(ball));
+            result.checkResult(computerBalls.playBall(ball));
         }
         return result;
     }
 
     public BallStatus playBall(Ball userBalls) {
-        return answerBalls.stream().map(answerBall -> answerBall.playBall(userBalls))
-                .filter(BallStatus::isNotNothing)
-                .findFirst()
-                .orElse(BallStatus.NOTHING);
+        for (Ball answerBall : answerBalls) {
+            if (answerBall.playBall(userBalls).isNotNothing()) {
+                return answerBall.playBall(userBalls);
+            }
+        }
+        return BallStatus.NOTHING;
     }
 
     public List<Ball> createBalls(List<Integer> answerBall) {
