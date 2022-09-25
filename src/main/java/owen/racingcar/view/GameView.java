@@ -1,9 +1,9 @@
 package owen.racingcar.view;
 
 import owen.racingcar.domain.GameResult;
-import owen.racingcar.utils.RacingUtils;
-import owen.racingcar.domain.car.Cars;
 import owen.racingcar.domain.RandomRacing;
+import owen.racingcar.domain.car.Cars;
+import owen.racingcar.utils.RacingUtils;
 
 import java.util.Arrays;
 import java.util.List;

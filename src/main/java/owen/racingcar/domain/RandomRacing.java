@@ -1,8 +1,8 @@
 package owen.racingcar.domain;
 
-import owen.racingcar.utils.RacingUtils;
 import owen.racingcar.domain.car.Car;
 import owen.racingcar.domain.car.Cars;
+import owen.racingcar.utils.RacingUtils;
 
 import java.util.Random;
 
