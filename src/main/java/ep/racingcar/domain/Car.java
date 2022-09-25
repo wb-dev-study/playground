@@ -10,6 +10,10 @@ public class Car {
         this.position = position;
     }
 
+    public Integer currentPosition() {
+        return this.position.current();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -26,5 +30,9 @@ public class Car {
         int result = name.hashCode();
         result = 31 * result + position.hashCode();
         return result;
+    }
+
+    public void move() {
+        this.position.moveForward();
     }
 }

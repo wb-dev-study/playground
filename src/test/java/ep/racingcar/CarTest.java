@@ -20,9 +20,16 @@ public class CarTest {
 
 
     @Test
-    @DisplayName("자동차는_이름과_위치를_가질_수_있다")
+    @DisplayName("자동차는 이름과 위치를 가질 수 있다")
     void generate_car() {
         Car newCar = new Car(new CarName("ep"), new Position());
         assertThat(car).isEqualTo(newCar);
+    }
+
+    @Test
+    @DisplayName("자동차는 위치를 움직일 수 있다.")
+    void car_move() {
+        car.move();
+        assertThat(car.currentPosition()).isEqualTo(1);
     }
 }

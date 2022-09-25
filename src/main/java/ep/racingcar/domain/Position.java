@@ -18,4 +18,12 @@ public class Position {
     public int hashCode() {
         return position.hashCode();
     }
+
+    public Integer current() {
+        return this.position;
+    }
+
+    public void moveForward() {
+        this.position++;
+    }
 }
