@@ -1,5 +1,7 @@
 package ep.racingcar.domain;
 
+import ep.racingcar.domain.strategy.MovingStrategy;
+
 public class Car {
 
     private CarName name;
@@ -34,5 +36,9 @@ public class Car {
 
     public void move() {
         this.position.moveForward();
+    }
+
+    public void move(MovingStrategy movingStrategy) {
+        movingStrategy.move(this);
     }
 }
