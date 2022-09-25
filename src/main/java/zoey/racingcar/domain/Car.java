@@ -30,4 +30,12 @@ public class Car {
     public void drive() {
         this.location++;
     }
+
+    public int getLocation() {
+        return location;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
