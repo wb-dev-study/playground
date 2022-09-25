@@ -12,8 +12,16 @@ public class Car {
         this.position = new Position();
     }
 
+    public Position position() {
+        return this.position;
+    }
+
     public Integer currentPosition() {
         return this.position.current();
+    }
+
+    public Boolean equalPosition(Position position) {
+        return this.position.equals(position);
     }
 
     @Override
@@ -44,5 +52,9 @@ public class Car {
 
     public Boolean isWin(Car another) {
         return this.position.isBiggerThan(another.position);
+    }
+
+    public Boolean isEqualName(String name) {
+        return this.name.equals(new CarName(name));
     }
 }

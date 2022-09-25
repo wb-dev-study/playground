@@ -23,6 +23,14 @@ public class ParticipantsTest {
     }
 
     @Test
+    @DisplayName("참여를 추가적으로 할 수 있다.")
+    void participants_participate() {
+        Car kimCar = new Car("kim");
+        participants.participate(kimCar);
+        assertThat(participants.count()).isEqualTo(3);
+    }
+
+    @Test
     @DisplayName("참여자는 자동차 리스트를 가지고 있다")
     void participants_count() {
         assertThat(participants.count()).isEqualTo(2);

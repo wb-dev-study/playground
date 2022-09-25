@@ -52,12 +52,12 @@ public class CarTest {
     @Test
     @DisplayName("자동차는 누가 앞에 있는지 확인할 수 있다")
     void car_is_win() {
-        Car another = new Car("another");
+        Car other = new Car("other");
 
         car.move();
         car.move();
-        another.move();
+        other.move();
 
-        assertThat(car.isWin(another)).isTrue();
+        assertThat(car.isWin(other)).isTrue();
     }
 }

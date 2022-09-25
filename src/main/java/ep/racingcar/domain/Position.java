@@ -1,8 +1,14 @@
 package ep.racingcar.domain;
 
-public class Position {
+public class Position implements Comparable<Position> {
 
     private Integer position = 0;
+
+    public Position() {}
+
+    public Position(Integer position) {
+        this.position = position;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -29,5 +35,10 @@ public class Position {
 
     public Boolean isBiggerThan(Position position) {
         return this.position > position.position;
+    }
+
+    @Override
+    public int compareTo(Position o) {
+        return this.position - o.position;
     }
 }
