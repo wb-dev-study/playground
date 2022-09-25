@@ -1,5 +1,8 @@
 package jay.racingcar.domain;
 
+import jay.racingcar.Output;
+import jay.racingcar.utils.RandomNumber;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,5 +30,13 @@ public class Cars {
         }
 
         return racingCars;
+    }
+
+    public void move() {
+        for (Car racingCar : racingCars) {
+            racingCar.move(RandomNumber.generateRandom());
+        }
+
+        Output.printCars(racingCars);
     }
 }
