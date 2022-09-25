@@ -6,8 +6,10 @@ public class Car {
 
     private final Position position;
 
+    private static final int MOVE_CONDITION = 4;
+
     public void move(int random) {
-        if (random >= 4) {
+        if (random >= MOVE_CONDITION) {
             this.position.move();
         }
     }
