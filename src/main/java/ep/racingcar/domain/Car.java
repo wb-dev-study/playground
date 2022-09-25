@@ -7,9 +7,9 @@ public class Car {
     private CarName name;
     private Position position;
 
-    public Car(CarName name, Position position) {
-        this.name = name;
-        this.position = position;
+    public Car(String name) {
+        this.name = new CarName(name);
+        this.position = new Position();
     }
 
     public Integer currentPosition() {
@@ -40,5 +40,9 @@ public class Car {
 
     public void move(MovingStrategy movingStrategy) {
         movingStrategy.move(this);
+    }
+
+    public Boolean isWin(Car another) {
+        return this.position.isBiggerThan(another.position);
     }
 }

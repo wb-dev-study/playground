@@ -26,4 +26,8 @@ public class Position {
     public void moveForward() {
         this.position++;
     }
+
+    public Boolean isBiggerThan(Position position) {
+        return this.position > position.position;
+    }
 }

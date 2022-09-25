@@ -1,10 +1,7 @@
 package ep.racingcar;
 
 import ep.racingcar.domain.Car;
-import ep.racingcar.domain.CarName;
-import ep.racingcar.domain.Position;
 import ep.racingcar.domain.strategy.DefaultMovingStrategy;
-import ep.racingcar.domain.strategy.MovingStrategy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -17,14 +14,14 @@ public class CarTest {
 
     @BeforeEach
     void setUp() {
-        car = new Car(new CarName("ep"), new Position());
+        car = new Car("ep");
     }
 
 
     @Test
     @DisplayName("자동차는 이름과 위치를 가질 수 있다")
     void generate_car() {
-        Car newCar = new Car(new CarName("ep"), new Position());
+        Car newCar = new Car("ep");
         assertThat(car).isEqualTo(newCar);
     }
 
@@ -50,5 +47,17 @@ public class CarTest {
             car.move();
         });
         assertThat(car.currentPosition()).isEqualTo(2);
+    }
+
+    @Test
+    @DisplayName("자동차는 누가 앞에 있는지 확인할 수 있다")
+    void car_is_win() {
+        Car another = new Car("another");
+
+        car.move();
+        car.move();
+        another.move();
+
+        assertThat(car.isWin(another)).isTrue();
     }
 }
