@@ -5,7 +5,18 @@ public class CarName {
     private String name;
 
     public CarName(String name) {
+        validate(name);
         this.name = name;
+    }
+
+    private void validate(String name) {
+        if (name.length() == 0) {
+            throw new IllegalArgumentException("자동차 이름은 공백일 수 없습니다.");
+        }
+
+        if (name.length() > 5) {
+            throw new IllegalArgumentException("자동차 이름은 5자를 넘길 수 없습니다.");
+        }
     }
 
     @Override
