@@ -4,6 +4,7 @@ import ep.racingcar.domain.strategy.DefaultMovingStrategy;
 import ep.racingcar.domain.strategy.MovingStrategy;
 import ep.racingcar.exception.RaceException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Race {
@@ -46,5 +47,16 @@ public class Race {
 
     public List<Car> winners() {
         return this.participants.winners(this.finishPosition);
+    }
+
+    public Boolean processing() {
+        return !this.end;
+    }
+
+    public Board currentBoard() {
+        List<Board.CurrentCarData> dataList = new ArrayList();
+        this.participants.currentCars()
+                .forEach(car -> dataList.add(new Board.CurrentCarData(car.name(), car.currentPosition())));
+        return new Board(dataList);
     }
 }

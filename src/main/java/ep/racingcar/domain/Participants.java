@@ -3,6 +3,7 @@ package ep.racingcar.domain;
 import ep.racingcar.domain.strategy.MovingStrategy;
 import ep.racingcar.exception.RaceException;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -17,6 +18,10 @@ public class Participants {
 
     public Participants(Collection<Car> cars) {
         this.cars = new HashSet<>(cars);
+    }
+
+    public List<Car> currentCars() {
+        return new ArrayList<>(this.cars);
     }
 
     public Integer count() {

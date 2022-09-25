@@ -16,6 +16,10 @@ public class Car {
         return this.position;
     }
 
+    public String name() {
+        return this.name.getName();
+    }
+
     public Integer currentPosition() {
         return this.position.current();
     }
