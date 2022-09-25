@@ -17,4 +17,4 @@ dependencies {
 
 test {
     useJUnitPlatform()
-}
+}ComputerRandomNumber.java
