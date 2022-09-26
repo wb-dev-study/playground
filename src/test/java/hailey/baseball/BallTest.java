@@ -22,17 +22,17 @@ class BallTest {
     @Test
     @DisplayName("잘못된 num으로 Ball 생성시 IllegalArgumentException 발생")
     void create_with_wrong_num() {
-        assertThatThrownBy(() -> new Ball(1, 0)).hasMessage("Utility class");
-        assertThatThrownBy(() -> new Ball(1, 10)).hasMessage("Utility class");
+        assertThatThrownBy(() -> new Ball(1, 0)).hasMessage("숫자는 1~9 사이여야 합니다.");
+        assertThatThrownBy(() -> new Ball(1, 10)).hasMessage("숫자는 1~9 사이여야 합니다.");
     }
 
     @Test
     @DisplayName("볼 생성")
     void make_balls() {
         List<Ball> balls = Ball.makeBall(Arrays.asList(8, 5, 9));
-        assertThat(balls.get(0).number.getNo()).isEqualTo(8);
-        assertThat(balls.get(1).number.getNo()).isEqualTo(5);
-        assertThat(balls.get(2).number.getNo()).isEqualTo(9);
+        assertThat(balls.get(0).getNumber().getNo()).isEqualTo(8);
+        assertThat(balls.get(1).getNumber().getNo()).isEqualTo(5);
+        assertThat(balls.get(2).getNumber().getNo()).isEqualTo(9);
     }
 
     @Test

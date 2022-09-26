@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Ball {
-    public int position;
-    public BallNumber number;
+    private int position;
+    private BallNumber number;
 
+    public BallNumber getNumber() {
+        return this.number;
+    }
     public Ball(int position, int number) {
         this.position = position;
         this.number = new BallNumber(number);
