@@ -1,5 +1,7 @@
 package owen.racingcar.domain.car;
 
+import owen.racingcar.RandomMovingStrategy;
+
 public class Car {
 
     private final CarName carName;
@@ -8,8 +10,8 @@ public class Car {
 
     private static final int MOVE_CONDITION = 4;
 
-    public void move(int random) {
-        if (random >= MOVE_CONDITION) {
+    public void move(RandomMovingStrategy strategy) {
+        if (strategy.move()) {
             this.position.move();
         }
     }

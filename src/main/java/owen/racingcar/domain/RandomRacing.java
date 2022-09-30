@@ -1,10 +1,9 @@
 package owen.racingcar.domain;
 
+import owen.racingcar.RandomMovingStrategy;
 import owen.racingcar.domain.car.Car;
 import owen.racingcar.domain.car.Cars;
 import owen.racingcar.utils.RacingUtils;
-
-import java.util.Random;
 
 public class RandomRacing {
 
@@ -28,9 +27,8 @@ public class RandomRacing {
     }
 
     private void startRacing() {
-        Random random = new Random();
         for (Car car : cars.getCarList()) {
-            car.move(random.nextInt(MAX_BOUND));
+            car.move(new RandomMovingStrategy());
             convert(car);
         }
         RacingUtils.printEndLine();
