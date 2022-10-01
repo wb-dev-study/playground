@@ -49,7 +49,8 @@ public class PlayGame {
         cars.forEach((car, score) -> {
             if (score.isSameMaxScore(max[0])) {
                 winners.put(car, score);
-            } else if (score.isOnlyMaxScore(max[0])) {
+            }
+            if (score.isOnlyMaxScore(max[0])) {
                 winners.clear();
                 winners.put(car, score);
                 max[0] = score.getScore();
