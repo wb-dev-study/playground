@@ -20,4 +20,8 @@ public class Position {
             throw new IllegalArgumentException("x 좌표는 " + MIN_VALUE + "보다 크고 " + MAX_VALUE + "보다 작아야 합니다.");
         }
     }
+
+    public Double distance(Position second) {
+        return Math.sqrt(Math.pow(this.x - second.x, 2) + Math.pow(this.y - second.y, 2));
+    }
 }

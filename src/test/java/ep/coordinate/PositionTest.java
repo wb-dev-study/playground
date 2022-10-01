@@ -3,6 +3,7 @@ package ep.coordinate;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -27,5 +28,14 @@ public class PositionTest {
     @DisplayName("X, Y 좌표는 0보다 작은 값을 입력할 수 없다")
     void create_position_min_value_error() {
         assertThatThrownBy(() -> new Position(24, -1)).isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    @DisplayName("두 포지션 사이의 거리를 구할 수 있다.")
+    void distance() {
+        Position x = new Position(7, 8);
+        Position y = new Position(4, 4);
+        Double result = x.distance(y);
+        assertThat(result).isEqualTo(5);
     }
 }
