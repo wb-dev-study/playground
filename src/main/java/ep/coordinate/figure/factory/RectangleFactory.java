@@ -1,7 +1,7 @@
 package ep.coordinate.figure.factory;
 
 import ep.coordinate.figure.Rectangle;
-import ep.coordinate.figure.Vertex;
+import ep.coordinate.Vertex;
 import ep.coordinate.figure.component.RectangleComponent;
 
 public class RectangleFactory implements FigureFactory<Rectangle> {

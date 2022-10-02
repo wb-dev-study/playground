@@ -1,7 +1,7 @@
 package ep.coordinate.figure.factory;
 
 import ep.coordinate.figure.Triangle;
-import ep.coordinate.figure.Vertex;
+import ep.coordinate.Vertex;
 import ep.coordinate.figure.component.TriangleComponent;
 
 public class TriangleFactory implements FigureFactory<Triangle> {

@@ -1,7 +1,4 @@
-package ep.coordinate.figure;
-
-import ep.coordinate.Line;
-import ep.coordinate.Position;
+package ep.coordinate;
 
 import java.util.ArrayList;
 import java.util.Arrays;

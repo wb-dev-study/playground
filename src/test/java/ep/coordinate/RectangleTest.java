@@ -1,7 +1,6 @@
 package ep.coordinate;
 
 import ep.coordinate.figure.Rectangle;
-import ep.coordinate.figure.Vertex;
 import ep.coordinate.figure.factory.FigureFactory;
 import ep.coordinate.figure.factory.RectangleFactory;
 import org.junit.jupiter.api.BeforeEach;
