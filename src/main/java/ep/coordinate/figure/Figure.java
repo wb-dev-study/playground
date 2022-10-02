@@ -6,6 +6,11 @@ package ep.coordinate.figure;
 public interface Figure {
 
     /**
+     * 도형의 이름
+     */
+    String name();
+
+    /**
      * 도형의 넓이
      * @return
      */

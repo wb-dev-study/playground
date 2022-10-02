@@ -2,6 +2,7 @@ package ep.coordinate.figure;
 
 public class Rectangle implements Figure {
 
+    private final static String RECTANGLE_NAME = "직사각형";
     private Integer width;
     private Integer height;
 
@@ -11,6 +12,11 @@ public class Rectangle implements Figure {
         }
         this.width = width;
         this.height = height;
+    }
+
+    @Override
+    public String name() {
+        return RECTANGLE_NAME;
     }
 
     @Override

@@ -2,6 +2,8 @@ package ep.coordinate.figure;
 
 public class Triangle implements Figure {
 
+    private final static String TRIANGLE_NAME = "삼각형";
+
     private Double a;
     private Double b;
     private Double c;
@@ -22,6 +24,11 @@ public class Triangle implements Figure {
         if (argument <= 0) {
             throw new IllegalArgumentException("변의 길이는 0보다 커야 합니다.");
         }
+    }
+
+    @Override
+    public String name() {
+        return TRIANGLE_NAME;
     }
 
     /**

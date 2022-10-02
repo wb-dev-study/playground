@@ -16,6 +16,10 @@ public class Vertex {
         this.positions = Arrays.asList(positions);
     }
 
+    public Vertex(List<Position> positions) {
+        this.positions = positions;
+    }
+
     public void add(Position position) {
         this.positions.add(position);
     }
