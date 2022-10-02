@@ -23,7 +23,7 @@ public class RectangleTest {
     @Test
     @DisplayName("사각형 넓이를 구할 수 있다")
     void rectangle_area() {
-        Vertex vertex = new Vertex(new Position(10, 10), new Position(22, 10), new Position(10, 10), new Position(22, 18), new Position(10, 18));
+        Vertex vertex = new Vertex(new Position(10, 10), new Position(22, 10), new Position(22, 18), new Position(10, 18));
         Rectangle rectangle = factory.vertexToFigure(vertex);
         assertThat(rectangle.area()).isEqualTo(96.0);
     }
