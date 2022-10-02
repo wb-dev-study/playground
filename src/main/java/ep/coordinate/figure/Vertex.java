@@ -5,9 +5,7 @@ import ep.coordinate.Position;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Vertex {
@@ -48,5 +46,20 @@ public class Vertex {
             lengthList.add(line.length());
         }
         return lengthList;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Vertex vertex = (Vertex) o;
+
+        return positions.equals(vertex.positions);
+    }
+
+    @Override
+    public int hashCode() {
+        return positions.hashCode();
     }
 }

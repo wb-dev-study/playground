@@ -22,4 +22,22 @@ public class Rectangle implements Figure {
     public Double perimeter() {
         return (double) (this.width * 2 + this.height * 2);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Rectangle rectangle = (Rectangle) o;
+
+        if (!width.equals(rectangle.width)) return false;
+        return height.equals(rectangle.height);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = width.hashCode();
+        result = 31 * result + height.hashCode();
+        return result;
+    }
 }

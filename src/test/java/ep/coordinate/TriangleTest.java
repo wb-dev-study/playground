@@ -1,10 +1,8 @@
 package ep.coordinate;
 
-import ep.coordinate.figure.Rectangle;
 import ep.coordinate.figure.Triangle;
 import ep.coordinate.figure.Vertex;
 import ep.coordinate.figure.factory.FigureFactory;
-import ep.coordinate.figure.factory.RectangleFactory;
 import ep.coordinate.figure.factory.TriangleFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

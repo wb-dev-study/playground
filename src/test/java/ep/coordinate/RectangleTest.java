@@ -4,7 +4,6 @@ import ep.coordinate.figure.Rectangle;
 import ep.coordinate.figure.Vertex;
 import ep.coordinate.figure.factory.FigureFactory;
 import ep.coordinate.figure.factory.RectangleFactory;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
