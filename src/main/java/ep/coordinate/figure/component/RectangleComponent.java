@@ -1,7 +1,7 @@
 package ep.coordinate.figure.component;
 
 import ep.coordinate.figure.Rectangle;
-import ep.coordinate.Vertex;
+import ep.coordinate.figure.material.Vertex;
 
 import java.util.List;
 

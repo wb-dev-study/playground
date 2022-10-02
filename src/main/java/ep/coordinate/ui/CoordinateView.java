@@ -1,7 +1,7 @@
 package ep.coordinate.ui;
 
 import ep.coordinate.CoordinateFactory;
-import ep.coordinate.Position;
+import ep.coordinate.figure.material.Position;
 import ep.coordinate.figure.Figure;
 
 import java.util.List;

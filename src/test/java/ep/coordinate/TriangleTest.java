@@ -3,6 +3,8 @@ package ep.coordinate;
 import ep.coordinate.figure.Triangle;
 import ep.coordinate.figure.factory.FigureFactory;
 import ep.coordinate.figure.factory.TriangleFactory;
+import ep.coordinate.figure.material.Position;
+import ep.coordinate.figure.material.Vertex;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

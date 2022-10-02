@@ -1,5 +1,7 @@
 package ep.coordinate;
 
+import ep.coordinate.figure.material.Line;
+import ep.coordinate.figure.material.Position;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

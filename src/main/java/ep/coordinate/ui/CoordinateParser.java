@@ -1,6 +1,6 @@
 package ep.coordinate.ui;
 
-import ep.coordinate.Position;
+import ep.coordinate.figure.material.Position;
 
 import java.util.ArrayList;
 import java.util.List;

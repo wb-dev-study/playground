@@ -4,6 +4,8 @@ import ep.coordinate.figure.Figure;
 import ep.coordinate.figure.factory.FigureFactory;
 import ep.coordinate.figure.factory.RectangleFactory;
 import ep.coordinate.figure.factory.TriangleFactory;
+import ep.coordinate.figure.material.Position;
+import ep.coordinate.figure.material.Vertex;
 
 import java.util.List;
 

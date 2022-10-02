@@ -1,4 +1,4 @@
-package ep.coordinate;
+package ep.coordinate.figure.material;
 
 public class Position {
 

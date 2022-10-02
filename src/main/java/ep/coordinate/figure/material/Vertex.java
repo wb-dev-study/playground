@@ -1,4 +1,4 @@
-package ep.coordinate;
+package ep.coordinate.figure.material;
 
 import java.util.ArrayList;
 import java.util.Arrays;
