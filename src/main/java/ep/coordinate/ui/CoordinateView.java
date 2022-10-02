@@ -6,7 +6,7 @@ import ep.coordinate.figure.Figure;
 
 import java.util.List;
 
-// (10,10)-(22,10)-(22,18)-(10,18)
+// (10,10)-(22,10)-(22,18)-(10,18) 96.0
 // (1,3)-(2,5)-(6,5) 4.0000000000000036
 public class CoordinateView {
     public static void main(String[] args) {

@@ -37,7 +37,7 @@ public class Triangle implements Figure {
      */
     @Override
     public Double area() {
-        Double s = ((a + b + c) / 2);
+        Double s = ((perimeter()) / 2);
         return Math.sqrt(s * (s - a) * (s - b) * (s - c));
     }
 
