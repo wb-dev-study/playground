@@ -16,6 +16,9 @@ public class Position {
     }
 
     private void validate(final Integer argument) {
+        if (argument == null) {
+            throw new IllegalArgumentException("좌표는 null 이 아니어야 합니다.");
+        }
         if (MAX_VALUE < argument || argument < MIN_VALUE) {
             throw new IllegalArgumentException("x 좌표는 " + MIN_VALUE + "보다 크고 " + MAX_VALUE + "보다 작아야 합니다.");
         }
@@ -23,5 +26,31 @@ public class Position {
 
     public Double distance(Position second) {
         return Math.sqrt(Math.pow(this.x - second.x, 2) + Math.pow(this.y - second.y, 2));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Position position = (Position) o;
+
+        if (!x.equals(position.x)) return false;
+        return y.equals(position.y);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = x.hashCode();
+        result = 31 * result + y.hashCode();
+        return result;
+    }
+
+    public Integer getX() {
+        return this.x;
+    }
+
+    public Integer getY() {
+        return this.y;
     }
 }
