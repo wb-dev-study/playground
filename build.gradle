@@ -1,12 +1,12 @@
-plugins {
-    id 'java'
-}
+apply plugin: 'java'
+apply plugin: 'eclipse'
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group = 'camp.nextstep'
+version = '1.0.0'
+sourceCompatibility = "11"
 
 repositories {
-    mavenCentral()
+	mavenCentral()
 }
 
 dependencies {
@@ -17,5 +17,5 @@ dependencies {
 }
 
 test {
-    useJUnitPlatform()
+	useJUnitPlatform()
 }
