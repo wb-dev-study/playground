@@ -15,4 +15,8 @@ public class Hands {
     public void receiveCard(Card card) {
         this.cardList.add(card);
     }
+
+    public List<Card> show() {
+        return this.cardList;
+    }
 }
