@@ -1,7 +1,7 @@
 package ep.blackjack.domain.card;
 
-import ep.blackjack.enums.CardType;
-import ep.blackjack.enums.CardValue;
+import ep.blackjack.domain.enums.CardType;
+import ep.blackjack.domain.enums.CardValue;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

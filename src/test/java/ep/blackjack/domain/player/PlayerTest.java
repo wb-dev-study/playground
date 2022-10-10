@@ -18,7 +18,7 @@ class PlayerTest {
     @BeforeEach
     void setUp() {
         this.cardDeck = new StandardCardDeck();
-        this.player = new Player();
+        this.player = new Player("ep");
     }
 
     @Test

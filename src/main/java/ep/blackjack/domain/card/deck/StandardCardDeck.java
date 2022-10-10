@@ -1,8 +1,8 @@
 package ep.blackjack.domain.card.deck;
 
 import ep.blackjack.domain.card.Card;
-import ep.blackjack.enums.CardType;
-import ep.blackjack.enums.CardValue;
+import ep.blackjack.domain.enums.CardType;
+import ep.blackjack.domain.enums.CardValue;
 
 import java.util.ArrayList;
 import java.util.Collections;

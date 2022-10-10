@@ -1,7 +1,7 @@
 package ep.blackjack.domain.card;
 
-import ep.blackjack.enums.CardType;
-import ep.blackjack.enums.CardValue;
+import ep.blackjack.domain.enums.CardType;
+import ep.blackjack.domain.enums.CardValue;
 
 public class Card {
     private CardType type;
@@ -10,6 +10,13 @@ public class Card {
     public Card(CardType type, CardValue value) {
         this.type = type;
         this.value = value;
+    }
+    public String showString() {
+        return this.value.getNumber() + this.type.name();
+    }
+
+    public Integer getNumber() {
+        return this.value.getNumber();
     }
 
     @Override

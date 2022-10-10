@@ -6,6 +6,13 @@ public class Money {
 
     private BigDecimal amount = BigDecimal.ZERO;
 
+    public Money() {
+
+    }
+
+    public Money(BigDecimal amount) {
+        this.amount = amount;
+    }
 
     public void add(BigDecimal addAmount) {
         this.amount = this.amount.add(addAmount);
