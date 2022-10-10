@@ -40,7 +40,7 @@ public class Hands {
             return ResultType.OVER;
         }
 
-        if (sum == 20) {
+        if (sum == 21) {
             return ResultType.BLACK_JAK;
         }
         return ResultType.UNDER;

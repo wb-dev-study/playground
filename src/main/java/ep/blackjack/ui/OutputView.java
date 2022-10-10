@@ -43,7 +43,7 @@ public class OutputView {
     }
 
     public static void finalPlayerRevenue(String name, Integer revenue) {
-        output(name + ": " + revenue * 2);
+        output(name + ": " + revenue);
     }
 
     public static void finalDealerRevenue(Integer balance) {

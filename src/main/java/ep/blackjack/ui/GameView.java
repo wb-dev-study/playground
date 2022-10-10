@@ -33,9 +33,7 @@ public class GameView {
 
     private void result() {
         OutputView.result("딜러", this.game.dealer().showHandsCardString(), this.game.dealer().sumHandsCard());
-        this.game.players().forEach(player -> {
-            OutputView.result(player.name(), player.showHandsCardString(), player.sumHandsCard());
-        });
+        this.game.players().forEach(player -> OutputView.result(player.name(), player.showHandsCardString(), player.sumHandsCard()));
     }
 
     private void participatePlayer() {
